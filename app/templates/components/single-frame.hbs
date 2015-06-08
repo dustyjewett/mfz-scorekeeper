@@ -1,8 +1,98 @@
-<li>
+{{#if editMode}}
+  {{input value=frame.name}}
+
+{{else}}
     <strong>{{frame.name}}</strong>
-    <ul>
-        {{#each frame.systems as |system|}}
-          <li>{{system}}</li>
-        {{/each}}
-    </ul>
-</li>
+{{/if}}<br/>
+Total Systems: {{frame.systems.length}}
+
+<ul>
+
+  <li>
+    Core
+    {{#if editMode}}
+      <button {{action 'addSystem' 'core'}}>+</button>
+      <button {{action 'removeSystem' 'core'}}>-</button>
+    {{/if}}
+    <br/>
+    {{#each frame.counts.core as |i|}}
+      {{unbound fa-icon 'joomla'}}
+    {{/each}}
+  </li>
+  <li>
+    Melee
+    {{#if editMode}}
+      <button {{action 'addSystem' 'melee'}}>+</button>
+      <button {{action 'removeSystem' 'melee'}}>-</button>
+    {{/if}}
+      <br/>
+    {{#each frame.counts.melee as |i|}}
+      {{unbound fa-icon 'gavel'}}
+    {{/each}}
+  </li>
+  <li>
+    Direct Range
+    {{#if editMode}}
+        <button {{action 'addSystem' 'direct'}}>+</button>
+        <button {{action 'removeSystem' 'direct'}}>-</button>
+    {{/if}}
+      <br/>
+    {{#each frame.counts.direct as |i|}}
+      {{unbound fa-icon 'bullseye'}}
+    {{/each}}
+  </li>
+  <li>
+    Artillery
+    {{#if editMode}}
+        <button {{action 'addSystem' 'range'}}>+</button>
+        <button {{action 'removeSystem' 'range'}}>-</button>
+    {{/if}}
+      <br/>
+    {{#each frame.counts.range as |i|}}
+      {{unbound fa-icon 'rocket'}}
+    {{/each}}
+  </li>
+  <li>
+    Armor
+    {{#if editMode}}
+        <button {{action 'addSystem' 'armor'}}>+</button>
+        <button {{action 'removeSystem' 'armor'}}>-</button>
+    {{/if}}
+      <br/>
+    {{#each frame.counts.armor as |i|}}
+      {{unbound fa-icon 'shirtsinbulk'}}
+    {{/each}}
+  </li>
+  <li>
+    Spot
+    {{#if editMode}}
+        <button {{action 'addSystem' 'spot'}}>+</button>
+        <button {{action 'removeSystem' 'spot'}}>-</button>
+    {{/if}}
+      <br/>
+    {{#each frame.counts.spot as |i|}}
+      {{unbound fa-icon 'spotify'}}
+    {{/each}}
+  </li>
+  <li>
+    Movement
+    {{#if editMode}}
+        <button {{action 'addSystem' 'movement'}}>+</button>
+        <button {{action 'removeSystem' 'movement'}}>-</button>
+    {{/if}}
+      <br/>
+    {{#each frame.counts.movement as |i|}}
+      {{unbound fa-icon 'angle-double-right'}}
+    {{/each}}
+  </li>
+</ul>
+
+{{#if editMode}}
+    <button {{action 'save'}}>Save</button>
+    <button {{action 'cancel'}}>Cancel</button>
+{{else}}
+  {{#if editable}}
+      <button {{action 'startEdit'}}>Edit</button>
+  {{/if}}
+{{/if}}
+

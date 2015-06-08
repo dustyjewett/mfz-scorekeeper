@@ -33,6 +33,13 @@
     "ember-cli-uglify": "^1.0.1",
     "ember-data": "1.0.0-beta.17",
     "ember-disable-proxy-controllers": "^0.7.0",
-    "ember-export-application-global": "^1.0.2"
+    "ember-export-application-global": "^1.0.2",
+    "emberfire": "1.4.5"
+  },
+  "dependencies": {
+    "ember-browserify": "^1.0.1",
+    "ember-cli-font-awesome": "0.0.9",
+    "ember-cli-notifications": "^1.2.4",
+    "lodash": "^3.9.3"
   }
 }

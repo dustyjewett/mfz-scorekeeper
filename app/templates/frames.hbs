@@ -1,1 +1,5 @@
-{{outlet}}
+<ul>
+  {{#each model as |frame|}}
+    <li>{{#link-to 'frames/frame' frame}}{{frame.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>

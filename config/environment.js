@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'mfz-scorekeeper',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://mfz-scorekeeper.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

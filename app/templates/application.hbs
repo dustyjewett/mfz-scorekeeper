@@ -1,3 +1,7 @@
 <h2 id="title">MFZ - GameKeeper</h2>
-
+<div class="c-notification__container notifications-container">
+  {{#each notifications as |notification|}}
+    {{notification-message notification=notification}}
+  {{/each}}
+</div>
 {{outlet}}
