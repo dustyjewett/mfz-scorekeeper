@@ -11,8 +11,13 @@ Router.map(function() {
     this.route('new');
     this.route('company', {path: '/companies/:company_id'});
   });
+
+  this.route('loadouts');
+  this.route('loadouts/loadout', {path: '/loadouts/:loadout_id'});
+
   this.route('frames');
   this.route('frames/frame',  {path: '/frames/:frame_id'});
+
   this.route('games');
   this.route('games/new');
   this.route('games/game', {path: '/games/:game_id'});

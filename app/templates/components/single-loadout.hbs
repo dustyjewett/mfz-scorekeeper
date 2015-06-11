@@ -1,0 +1,29 @@
+{{#if editMode}}
+  {{input value=loadout.description}}
+
+{{else}}
+    <strong>{{loadout.description}}</strong>
+{{/if}}
+<br />
+Total Frames: {{loadout.frames.length}}
+<br />
+Total Systems: {{loadout.systemsCount}}
+
+<h3>Frames:</h3>
+<ul>
+    {{#each loadout.frames as |frame|}}
+      <li>
+          {{frame.name}}
+      </li>
+    {{/each}}
+</ul>
+
+{{#if editMode}}
+    <button {{action 'save'}}>Save</button>
+    <button {{action 'cancel'}}>Cancel</button>
+{{else}}
+  {{#if editable}}
+      <button {{action 'startEdit'}}>Edit</button>
+  {{/if}}
+{{/if}}
+

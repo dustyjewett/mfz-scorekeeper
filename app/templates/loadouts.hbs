@@ -1,0 +1,5 @@
+<ul>
+  {{#each model as |loadout|}}
+    <li>{{#link-to 'loadouts/loadout' loadout}}{{loadout.description}}{{/link-to}}</li>
+  {{/each}}
+</ul>
